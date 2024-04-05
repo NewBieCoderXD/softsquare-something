@@ -34,7 +34,7 @@ export default function paymentPage(){
     }
     return(
     <main className=' flex items-center justify-center bg-green-400	h-screen'>
-        <div className='flex flex-col font-sans text-center m-10 p-10 bg-white border-rounded w-2/4 h-50vh content-center justify-center shadow-lg '>
+        <div className='flex flex-col font-sans text-center m-10 p-10 bg-white border-solid border-black border-1 rounded-lg w-2/4 h-50vh content-center justify-center shadow-lg '>
             <div className='text-black text-4xl font-bold font-serif flex justify-center my-2'>จองสำเร็จแล้ว!</div>
             <div className='text-slate-400 text-xl font-semibold font-serif flex justify-center my-2'>กรุณาเลือกวิธีการชำระเงิน</div>
             <Select variant="standard" value={payment} onChange={handlePaymentChange} className='text-slate-500 text-xl font-semibold content-center justify-center'>
