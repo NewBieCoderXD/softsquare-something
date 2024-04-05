@@ -16,13 +16,14 @@ export default function Home() {
   let [userType,setUserType] = useState(UserType.prajoom);
   function toggleUserType(){
     if(userType==UserType.prajoom){
-      return UserType.khajohn
+      setUserType(UserType.khajohn)
+      return;
     }
-    return UserType.prajoom;
+    setUserType(UserType.prajoom)
   }
   return (
-    <main className="bg-white flex min-h-screen flex-col items-center justify-between p-24 w-full">
-      <div className="w-full flex flex-row justify-evenly">
+    <main className="bg-white flex min-h-screen flex-col items-center p-2 pt-0 w-full">
+      <div className="w-full flex flex-row justify-between">
         {
           userType==UserType.prajoom ? 
           <button
@@ -36,24 +37,28 @@ export default function Home() {
           >ประจำ</button>
         }
         <p className="text-2xl text-black">Main</p>
-        <p className="text-[green]">Sign Out</p>
-      </div>
-      <div className="sm:w-full md:w-[80%]">
-      {
-        // userType==UserType.prajoom ? 
-        // <div className="w-full flex flex-col justify-center items-center bg-white border-solid border-grey rounded-2xl">
-        //   <p className="text-red">คุณยังไม่ได้ชำระเงิน!</p>
-        //   <Link href="/payment">
-        //     <button className="rounded-2xl bg-[green] ">ชำระเงิน</button>
-        //   </Link>
-        // </div>
-        // :
-        <div className="w-full flex flex-col gap-2">
-          <SearchDate/>
-          <BookingItem image="/img/shop1.jpg" title="A19"/>
-          <BookingItem image="/img/shop2.jpg" title="A20"/>
+        <div className = "flex flex-row gap-3">
+          <Link href="/signout">
+            <p className="text-[green] hover:text-black">Sign Out</p>
+          </Link>
+          <Link href="/login">
+          <p className="text-[green] hover:text-black">Sign In</p>
+        </Link>
         </div>
-      }
+        
+      </div>
+      <div className="sm:w-full md:w-[80%] flex flex-col gap-3">
+        <div className="w-full flex flex-col justify-center items-center bg-white border-solid border-grey border-2 shadow-lg p-3">
+          <p className="text-[red]">คุณยังไม่ได้ชำระเงิน!</p>
+          <Link href="/payment">
+            <button className="rounded-2xl bg-[green] text-white p-2">ชำระเงิน</button>
+          </Link>
+        </div>
+        <div className="w-full flex flex-col gap-2 border-solid border-2 border-grey shadow-lg p-2">
+          <SearchDate></SearchDate>
+          <BookingItem image="/img/shop1.png" title="A19"/>
+          <BookingItem image="/img/shop2.png" title="A20"/>
+        </div>
       </div>
     </main>
   );
