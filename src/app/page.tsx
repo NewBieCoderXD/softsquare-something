@@ -23,7 +23,7 @@ export default function Home() {
   }
   return (
     <main className="bg-white flex min-h-screen flex-col items-center p-2 pt-0 w-full">
-      <div className="w-full flex flex-row justify-between">
+      <div className="w-full flex flex-row justify-between relative">
         {
           userType==UserType.prajoom ? 
           <button
@@ -36,7 +36,7 @@ export default function Home() {
             className="text-[green]"
           >ประจำ</button>
         }
-        <p className="text-2xl text-black">Main</p>
+        <p className="text-2xl text-black absolute left-1/2 transform -translate-x-1/2 text-center w-fit">Main</p>
         <div className = "flex flex-row gap-3">
           <Link href="/signout">
             <p className="text-[green] hover:text-black">Sign Out</p>
